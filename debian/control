@@ -1,0 +1,19 @@
+Source: usbutils
+Section: utils
+Priority: optional
+Maintainer: Aurelien Jarno <aurel32@debian.org>
+Build-Depends: debhelper (>= 12), libusb-1.0-0-dev, libudev-dev, pkg-config
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: https://github.com/gregkh/usbutils
+
+Package: usbutils
+Architecture: linux-any
+Depends: ${shlibs:Depends}, ${misc:Depends}, usb.ids
+Multi-Arch: foreign
+Description: Linux USB utilities
+ This package contains the lsusb utility for inspecting the devices
+ connected to the USB bus. It shows a graphical representation of the
+ devices that are currently plugged in, showing the topology of the
+ USB bus. It also displays information on each individual device on
+ the bus.

@@ -1,0 +1,27 @@
+https://github.com/gregkh/usbutils/pull/97
+
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -63,7 +63,7 @@
+ 	chmod 755 $@
+ 
+ lsusb.8: $(srcdir)/lsusb.8.in
+-	sed 's|VERSION|$(VERSION)|g;s|@usbids@|$(datadir)/usb.ids|g' $< >$@
++	sed 's|VERSION|$(VERSION)|g' $< >$@
+ 
+ usb-devices.1: $(srcdir)/usb-devices.1.in
+ 	sed 's|VERSION|$(VERSION)|g' $< >$@
+--- a/lsusb.8.in
++++ b/lsusb.8.in
+@@ -57,11 +57,6 @@
+ .SH RETURN VALUE
+ If the specified device is not found, a non-zero exit code is returned.
+ 
+-.SH FILES
+-.TP
+-.B @usbids@
+-A list of all known USB ID's (vendors, products, classes, subclasses and protocols).
+-
+ .SH SEE ALSO
+ .BR lspci (8),
+ .BR usbview (8).
